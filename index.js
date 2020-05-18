@@ -59,12 +59,14 @@ async function test(collection) {
   try {
     await collection.bulkWrite(ops, { ordered: false });
   } catch (err) {
-    console.error('BulkWrite was expected to throw an error here!!');
+    console.error('BulkWrite was NOT expected to throw an error here!!');
   }
 
   // check if update succeeded
   const updatedAdam = await collection.findOne({ email: 'adam@gmail.com' });
   if (updatedAdam.age !== 39) {
-    console.error(`UpdateOne operation did not run. Expected age: 39 and got: ${updatedAdam.age}`);
+    console.error(`Fail - updateOne operation did not run. Expected age: 39 and got: ${updatedAdam.age}`);
+  } else {
+    console.log('Success - updateOne operation did run!!')
   }
 }
