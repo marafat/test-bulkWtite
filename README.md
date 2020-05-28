@@ -1,6 +1,6 @@
 # test-bulkWtite
 
-A sample project to reproduce an issue with unordered bulk writes in the Node MongoDB Driver.
+A sample project to reproduce an issue with unordered bulk writes in the Node MongoDB Driver v3.5.7
 
 
 ### Update
